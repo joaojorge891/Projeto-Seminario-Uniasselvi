@@ -1,0 +1,31 @@
+<app-bread-crump [items]="[{ text: 'Participantes' }]"></app-bread-crump>
+
+<app-page-header page-title="Participantes Cadastrados" button-text=" Novo" button-link="new" button-class="btn-success"
+  icon-class="bi bi-person-plus-fill">
+</app-page-header>
+
+<table class="table table-hover">
+  <thead>
+    <tr class="text-light">
+      <th>Participante</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let participant of participants">
+      <td>
+        <strong>{{ participant.nome }}</strong> - <span>{{ participant.cpf }}</span>
+        <br />
+        <small>{{ participant.logradouro }}, {{ participant.bairro }},
+          {{ participant.localidade }} - {{ participant.uf }}</small>
+      </td>
+      <td>
+        <a [routerLink]="[participant.id, 'edit']" class="btn btn-outline-info btn-sm mr-2 edit-button" role="button"><i
+            class="bi bi-pencil-fill"></i>Editar</a>
+        <button (click)="deleteParticipant(participant)" class="btn btn-outline-danger btn-sm" id="btn-excluir">
+          <i class="bi bi-trash3-fill"></i>Excluir
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

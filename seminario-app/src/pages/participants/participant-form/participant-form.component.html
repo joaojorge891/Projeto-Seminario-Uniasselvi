@@ -1,0 +1,158 @@
+<app-bread-crump [items]="[
+  { text: 'Participantes', link: '/participants' },
+  { text: pageTitle }
+ ]"></app-bread-crump>
+
+<app-page-header [page-title]="pageTitle" button-text=" Voltar" button-link="/participantes" button-class="btn-primary"
+  icon-class="bi bi-skip-backward-fill">
+</app-page-header>
+
+<form [formGroup]="participantForm" (submit)="submitForm()">
+  <div class="card mb-3">
+    <div class="card-header">Informações sobre o participante</div>
+
+    <div class="card-body">
+      <div class="form-row">
+        <div class="form-group col-md-5">
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control" formControlName="nome" id="nome" />
+
+          <app-form-field-error [form-control]="participantForm.get('nome')"></app-form-field-error>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" formControlName="email" id="email" />
+
+          <app-form-field-error [form-control]="participantForm.get('email')"></app-form-field-error>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="cpf">CPF</label>
+          <input type="text" mask="000.000.000-00" class="form-control" formControlName="cpf" id="cpf" />
+
+          <app-form-field-error [form-control]="participantForm.get('cpf')"></app-form-field-error>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="logradouro">Endereço</label>
+          <input type="text" class="form-control" formControlName="logradouro" id="logradouro" />
+
+          <app-form-field-error [form-control]="participantForm.get('logradouro')"></app-form-field-error>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="bairro">Bairro</label>
+          <input type="text" class="form-control" formControlName="bairro" id="bairro" />
+
+          <app-form-field-error [form-control]="participantForm.get('bairro')"></app-form-field-error>
+        </div>
+        <div class="col-md-6">
+          <label for="localidade">Cidade</label>
+          <input type="text" id="localidade" formControlName="localidade" class="form-control" />
+
+          <app-form-field-error [form-control]="participantForm.get('localidade')"></app-form-field-error>
+        </div>
+        <div class="col-md-3">
+          <label for="uf">Estado</label>
+          <select type="text" id="uf" formControlName="uf" class="form-control">
+            <option [value]="uf" *ngFor="let uf of listaEstados">
+              {{ uf }}
+            </option>
+          </select>
+
+          <app-form-field-error [form-control]="participantForm.get('uf')"></app-form-field-error>
+        </div>
+        <div class="col-md-3">
+          <label for="cep">CEP</label>
+          <input type="text" mask="00000-000" id="cep" formControlName="cep" class="form-control" />
+          <app-form-field-error [form-control]="participantForm.get('cep')"></app-form-field-error>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="especialidade">Especialidade</label>
+          <select type="text" id="especialidade" formControlName="especialidade" class="form-control">
+            <option [value]="especialidade" *ngFor="let especialidade of listaEspecialidades">
+              {{ especialidade }}
+            </option>
+          </select>
+          <app-form-field-error [form-control]="participantForm.get('especialidade')"></app-form-field-error>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="senioridade">Senioridade</label>
+          <select type="text" id="senioridade" formControlName="senioridade" class="form-control">
+            <option [value]="senioridade" *ngFor="let senioridade of listaSenioridades">
+              {{ senioridade }}
+            </option>
+          </select>
+          <app-form-field-error [form-control]="participantForm.get('senioridade')"></app-form-field-error>
+        </div>
+        <div class="form-group col-md-6">
+          <span class="labelTecnologias">Tecnologias de Interesse</span>
+          <div class="card text-center ajustaCard">
+            <div class="card-body">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="isChecked['HTML']" id="HTML"
+                  (change)="onChangeTecnologia($event)" formControlName="html" />
+                <label class=" form-check-label" for="HTML">HTML</label>
+                <app-form-field-error [form-control]="participantForm.get('html')"></app-form-field-error>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="isChecked['CSS']" id="CSS"
+                  (change)="onChangeTecnologia($event)" formControlName="css" />
+                <label class="form-check-label" for="CSS">CSS</label>
+                <app-form-field-error [form-control]="participantForm.get('css')"></app-form-field-error>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="isChecked['JavaScript']" id="JavaScript"
+                  (change)="onChangeTecnologia($event)" formControlName="js" />
+                <label class="form-check-label" for="JavaScript">JavaScript</label>
+                <app-form-field-error [form-control]="participantForm.get('js')"></app-form-field-error>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="isChecked['PHP']" id="PHP"
+                  (change)="onChangeTecnologia($event)" formControlName="php" />
+                <label class="form-check-label" for="PHP">PHP</label>
+                <app-form-field-error [form-control]="participantForm.get('php')"></app-form-field-error>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="isChecked['cSharp']" id="cSharp"
+                  (change)="onChangeTecnologia($event)" formControlName="cSharp" />
+                <label class="form-check-label" for="cSharp">C#</label>
+                <app-form-field-error [form-control]="participantForm.get('cSharp')"></app-form-field-error>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="isChecked['Python']" id="Python"
+                  (change)="onChangeTecnologia($event)" formControlName="python" />
+                <label class="form-check-label" for="Python">Python</label>
+                <app-form-field-error [form-control]="participantForm.get('python')"></app-form-field-error>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="isChecked['Java']" id="Java"
+                  (change)="onChangeTecnologia($event)" formControlName="java" />
+                <label class="form-check-label" for="Java">Java</label>
+                <app-form-field-error [form-control]="participantForm.get('java')"></app-form-field-error>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="comentarios">Conte um pouco mais sobre a sua experiência</label>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Deixe um comentário aqui" id="comentarios"
+              formControlName="comentarios"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-danger mt-4" *ngIf="serverErrorMessage">
+    <strong>Erro no servidor:</strong>
+    <ul>
+      <li *ngFor="let error of serverErrorMessage">{{ error }}</li>
+    </ul>
+  </div>
+
+  <button [disabled]="submittingForm || participantForm.invalid" type="submit"
+    class="btn btn-primary btn-md float-right">
+    Salvar
+  </button>
+</form>

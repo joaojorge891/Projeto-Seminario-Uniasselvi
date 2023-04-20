@@ -1,0 +1,9 @@
+@media screen and (max-width: 770px) {
+ #btn-excluir {
+  margin-top: 5px;
+ }
+}
+
+.edit-button {
+ width: 70px;
+}
