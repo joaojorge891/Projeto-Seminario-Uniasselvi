@@ -38,11 +38,11 @@ public class Participante {
     private String email;
     
     @NotEmpty(message = "Campo cpf não pode ser vazio")
-    @Column(nullable = false, length = 11)
+    @Column(nullable = false, length = 15)
     private String cpf;
     
     @NotEmpty(message = "Campo cep não pode ser vazio")
-    @Column(nullable = false, length = 8)
+    @Column(nullable = false, length = 10)
     private String cep;
     
     @NotEmpty(message = "Campo logradouro não pode ser vazio")
