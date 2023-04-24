@@ -17,7 +17,7 @@ export class ParticipantFormComponent implements OnInit, AfterContentChecked {
   public currentAction: string;
   public participantForm: FormGroup;
   public pageTitle: string;
-  public serverErrorMessage: string[] = null;
+  public serverErrorMessage: string[];
   public submittingForm: boolean = false;
   public participant: Participants = new Participants();
   public listaEstados: string[] = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"];
@@ -166,11 +166,14 @@ export class ParticipantFormComponent implements OnInit, AfterContentChecked {
   private actionsForError(error: any): void {
     toastr.error("Ocorreu um erro ao processar a sua solicitação!");
     this.submittingForm = false;
-    console.error(error);
     if (error.status === 422)
       this.serverErrorMessage = error;
-    else
-      this.serverErrorMessage = ["Falha na comunicação com o servidor. Por favor, tente mais tarde!"];
+    else {
+      if (error.error.Causa !== "")
+        this.serverErrorMessage = [error.error.Causa];
+      else
+        this.serverErrorMessage = ["Falha na comunicação com o servidor. Por favor, tente mais tarde!"];
+    }
   }
 
   private convertTecnologias(participant: Participants) {
