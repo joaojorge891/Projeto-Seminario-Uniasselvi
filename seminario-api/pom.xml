@@ -9,7 +9,7 @@
         <relativePath/> 
     </parent>
     <groupId>id.test</groupId>
-    <artifactId>spring-boot-testing</artifactId>
+    <artifactId>seminario-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>seminario-api</name>
     <description>Projeto para o Seminario Uniasselvi</description>

@@ -1,35 +1,34 @@
 .labelTecnologias {
- display: flex;
+  display: flex;
 }
 
 textarea {
- height: 75px;
+  height: 75px;
 }
 
 .ajustaCard {
- height: 40px;
- margin-top: 7px;
+  height: 40px;
+  margin-top: 7px;
 }
 
 .ajustaCard .card-body {
- display: flex;
- align-items: center;
- justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (min-width: 770px) and (max-width: 1200px) {
- .ajustaCard {
-  height: 70px;
- }
- .ajustaCard .card-body {
-  display: inline;
- }
+  .ajustaCard {
+    height: 70px;
+  }
+
+  .ajustaCard .card-body {
+    display: inline;
+  }
 }
 
 @media screen and (min-width: 1200px) {
- .ajustaCard {
-  height: 40px;
- }
+  .ajustaCard {
+    height: 40px;
+  }
 }
-
-/* style="height: 40px; margin-top: 7px" */

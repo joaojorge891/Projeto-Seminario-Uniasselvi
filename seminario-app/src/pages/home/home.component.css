@@ -1,0 +1,19 @@
+.footer-person {
+  background-color: #6a5acd;
+  height: 30px;
+}
+
+#wrapper #footer {
+  padding: 0px;
+}
+
+#wrapper #footer>div {
+  padding-top: 0;
+  max-width: 960px;
+}
+
+#wrapper {
+  margin: 0 auto;
+  width: 100%;
+  font-size: 1.7em;
+}

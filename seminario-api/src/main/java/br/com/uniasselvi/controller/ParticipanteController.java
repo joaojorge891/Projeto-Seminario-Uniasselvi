@@ -43,7 +43,6 @@ public class ParticipanteController {
     public ResponseEntity<Participante> updateParticipante(@PathVariable Long id, @RequestBody @Valid Participante participante) {
         return ParticipanteService.findParticipanteById(id)
                 .map(participanteObj -> {
-                	System.out.println(participanteObj);
                     participante.setId(id);
                     return ResponseEntity.ok(ParticipanteService.updateParticipante(participante));
                 })
