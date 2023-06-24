@@ -1,555 +1,617 @@
 <!DOCTYPE html>
-<html lang="pt-br" dir="ltr">
+<html>
 
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <base href="http://www.utfpr.edu.br/cursos/especializacao/ct/desenvolvimento-web-com-frameworks-modernos">
-    <meta property="og:title" content="Desenvolvimento Web com Frameworks Modernos">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="article">
-    <meta property="og:url"
-      content="http://www.utfpr.edu.br/cursos/especializacao/ct/desenvolvimento-web-com-frameworks-modernos">
-    <meta property="og:image" content="http://www.utfpr.edu.br/logo.png">
+    <link media="all" type="text/css" rel="stylesheet"
+      href="https://portal.uniasselvi.com.br/public/build/main.concat.min.css?v=20190705">
 
-    <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="Universidade Tecnológica Federal do Paraná UTFPR">
+    <link media="all" type="text/css" rel="stylesheet"
+      href="https://portal.uniasselvi.com.br/public/fonts/fonts-neosans.css?v=20190705">
 
-    <script>
-      (function () {
-        var po = document.createElement('script');
-        po.async = true;
-        po.src = document.location.protocol + '//connect.facebook.net/pt_BR/all.js#xfbml=1';
-        var head = document.getElementsByTagName('head')[0];
-        head.appendChild(po);
-      }());
-    </script>
+    <link media="all" type="text/css" rel="stylesheet"
+      href="https://portal.uniasselvi.com.br/public/node_modules/material-design-icons/iconfont/material-icons.css">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@utfpr_">
-    <meta property="creator.productor"
-      content="http://estruturaorganizacional.dados.gov.br/id/unidade-organizacional/454">
+    <meta charSet="utf-8" />
+    <meta name="next-head-count" content="17" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <style type="text/css" media="all">
-      @import url(http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourcejquery-cachekey-0ab613baff94e0977d3cb7ee060f353f.css);
-    </style>
-    <link rel="stylesheet" type="text/css"
-      href="http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/reset-cachekey-0280634685ff20a9c4144bb54c3ea467.css"
-      media="screen">
-    <link rel="stylesheet" type="text/css"
-      href="http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/base-cachekey-5d503193b9e7b82f0097a896a5368b68.css">
-    <link rel="stylesheet" type="text/css"
-      href="http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourceplone.app.jquerytools.dateinput-cachekey-4924fe7951a1194de4a1b45223112418.css"
-      media="screen">
-    <style type="text/css" media="screen">
-      @import url(http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourceplone.formwidget.contenttreecontenttree-cachekey-a99185ee1bac4baf68817d4dc0ab74b2.css);
-    </style>
-    <link rel="stylesheet" type="text/css"
-      href="http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourcecollection-cachekey-c3187083d67e32296294b51054409c37.css"
-      media="screen">
-    <style type="text/css" media="screen">
-      @import url(http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourcecalendar_stylescalendar-cachekey-257f2eba2473246f84efd7dcc620b5e2.css);
-    </style>
-    <link rel="stylesheet" type="text/css"
-      href="http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourcebrasil.gov.agendaagenda-cachekey-70f0d9e1b22e80eb255cba627bc78a16.css">
-    <style type="text/css" media="screen">
-      @import url(http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/jquery.autocomplete-cachekey-6f2486f9ef5b98796efbe4a3c1ccb1e7.css);
-    </style>
-    <style type="text/css" media="screen">
-      @import url(http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourceProducts.Doormat.stylesheetsdoormat-cachekey-6e63957166014ae07991288dd2b95e87.css);
-    </style>
-    <link rel="stylesheet" type="text/css"
-      href="http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/embedder-cachekey-75b961f0fc28ccdbb106d933ce263285.css"
-      media="screen">
-    <style type="text/css" media="screen">
-      @import url(http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourcecollective.pollscsscollective.polls-cachekey-3effee92bbc2282057e53ad1805c9027.css);
-    </style>
-    <link rel="stylesheet" type="text/css"
-      href="http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourcebrasil.gov.tilestiles-cachekey-2cc2dea1fc897428d4fc6f84fb2557e1.css">
-    <!--[if lt IE 8]>
-
-    <link rel="stylesheet" type="text/css" href="http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/IEFixes-cachekey-c61bb6f42bc97fcf885740bad84ce9b2.css" media="screen" />
-        <![endif]-->
-
-    <link rel="stylesheet" type="text/css"
-      href="http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourcebrasil.gov.portletscssmain-cachekey-701d933452e5c51533d208abc124abd4.css"
-      media="screen">
-    <link rel="stylesheet" type="text/css"
-      href="http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/faceted_view-cachekey-41113d527ac93a3c09769d8553a1a084.css"
-      media="screen">
-    <link rel="stylesheet" type="text/css"
-      href="http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourcebrasil.gov.facetadacssmain-cachekey-55a1063e5e7f20b421f46c652267ae90.css"
-      media="screen">
-    <style type="text/css" media="screen">
-      @import url(http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourcecollective.z3cform.datagridfielddatagridfield-cachekey-799fe910c60318eb4b87f18d79de2c92.css);
-    </style>
-    <link rel="stylesheet" type="text/css"
-      href="http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourceploneutfpr.personalizacaomain-cachekey-d7381342e4d7187b63f895bf79d6edab.css"
-      media="screen">
-    <style type="text/css" media="screen">
-      @import url(http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourcecollective.nitfnitf-cachekey-e64e3330685ee5dd159201128447f2c5.css);
-    </style>
-    <link rel="stylesheet" type="text/css"
-      href="http://www.utfpr.edu.br/portal_css/brasil_gov_facetada/resourceplone.formwidget.datetimestyles-cachekey-431bbb3550c988c63a0af99efffc89e7.css">
-
-
-
-    <script type="text/javascript"
-      src="http://www.utfpr.edu.br/portal_javascripts/brasil_gov_facetada/resourceplone.app.jquery-cachekey-ec39de2b2d840218c9ca01544ed0b8b5.js"></script>
-    <script type="text/javascript"
-      src="http://www.utfpr.edu.br/portal_javascripts/brasil_gov_facetada/register_function-cachekey-028d3eb1ad499b5a5a4e52e720034b37.js"></script>
-    <script type="text/javascript"
-      src="http://www.utfpr.edu.br/portal_javascripts/brasil_gov_facetada/resourceplone.formwidget.querystring.querywidget-cachekey-bdd5a8b450ad9318f1e4531fae68e7a3.js"></script>
-    <script type="text/javascript"
-      src="http://www.utfpr.edu.br/portal_javascripts/brasil_gov_facetada/resourcecollective.js.bootstrapjsbootstrap.min-cachekey-64f932a17fe11866876bba97a6d0ea58.js"></script>
-    <script type="text/javascript"
-      src="http://www.utfpr.edu.br/portal_javascripts/brasil_gov_facetada/jquery.autocomplete.min-cachekey-eda2dd058b03cc86fda714cea1c4cab7.js"></script>
-    <script type="text/javascript"
-      src="http://www.utfpr.edu.br/portal_javascripts/brasil_gov_facetada/faceted_view-cachekey-43bda556ebfb01516e486b755c3999ea.js"></script>
-    <script type="text/javascript"
-      src="http://www.utfpr.edu.br/portal_javascripts/brasil_gov_facetada/resourcebrasil.gov.facetadajsmain-cachekey-78640ac104efb93258efbad640d2d514.js"></script>
-    <script type="text/javascript"
-      src="http://www.utfpr.edu.br/portal_javascripts/brasil_gov_facetada/resourcecollective.pollsjsjquery.tasksplease-cachekey-e8aac528c091893f2565a66a86f097e1.js"></script>
-    <script type="text/javascript"
-      src="http://www.utfpr.edu.br/portal_javascripts/brasil_gov_facetada/resourcecollective.nitfnitf-cachekey-6eaefdb0b3427b6cb544641ef8083458.js"></script>
-
-
-
-    <script async src="http://www.utfpr.edu.br/++resource++collective.lazysizes/lazysizes-43c36fc.js"></script>
-
-
-    <title>Desenvolvimento Web com Frameworks Modernos — Universidade Tecnológica Federal do Paraná UTFPR</title>
-
-    <link rel="http://purl.org/dc/terms/subject http://schema.org/about http://xmlns.com/foaf/0.1/primaryTopic"
-      href="http://vocab.e.gov.br/2011/03/vcge#esquema">
-
-
-    <link rel="author" href="http://www.utfpr.edu.br/author/tassia" title="Informações do Autor">
-
-
-    <link rel="canonical"
-      href="http://www.utfpr.edu.br/cursos/especializacao/ct/desenvolvimento-web-com-frameworks-modernos">
-
-
-
-
-
-    <script type="text/javascript">
-      jQuery(function ($) {
-        if (typeof ($.datepicker) != "undefined") {
-          $.datepicker.setDefaults(
-            jQuery.extend($.datepicker.regional['pt-BR'],
-              { dateFormat: 'dd/mm/yy' }));
-        }
-      });
-    </script>
-
-
-
-
-    <link rel="search" href="http://www.utfpr.edu.br/@@search" title="Buscar neste site">
-
-
-
-
-
-
-
-
-
-
-    <meta name="generator" content="Plone - http://plone.org">
-
-
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <link rel="shortcut icon" href="/++theme++utfpr_branco/img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/++theme++utfpr_branco/img/touch_icon.png">
-
-    <!-- Plone CSS - only for preview, will be removed in rules.xml -->
-
-
-    <!-- Theme CSS - only for preview, will be removed in rules and added in CSS registry -->
-
-    <link media="all" href="/++theme++utfpr_branco/css/style.css" type="text/css" rel="stylesheet">
   </head>
 
-  <body id=""
-    class="template-document_view portaltype-document site-Plone section-cursos subsection-especializacao subsection-especializacao-ct subsection-especializacao-ct-desenvolvimento-web-com-frameworks-modernos userrole-anonymous"
-    data-base-url="http://www.utfpr.edu.br/cursos/especializacao/ct/desenvolvimento-web-com-frameworks-modernos"
-    data-portal-url="http://www.utfpr.edu.br" dir="ltr">
-    <div id="wrapper">
+  <body>
+    <div id="__next"><noscript><iframe title="sympla-gtm"
+          src="https://www.googletagmanager.com/ns.html?id=GTM-MXLMPC"></iframe></noscript><noscript><img
+          src="https://www.facebook.com/tr?id=2293324960941478&amp;ev=PageView&amp;noscript=1"
+          alt="fb_pixel" /></noscript>
 
-
-      <div id="main" role="main">
-        <div id="plone-content">
-
-          <div id="portal-columns" class="row">
-
-            <div id="viewlet-above-content">
-              <div id="portal-breadcrumbs">
-                <span id="breadcrumbs-you-are-here">Você está aqui:</span>
-                <span id="breadcrumbs-home">
-                  <a href="http://www.utfpr.edu.br">Página Inicial</a>
-                  <span class="breadcrumbSeparator">
-                    &gt;
-
-                  </span>
-                </span>
-
-                <span dir="ltr" id="breadcrumbs-4">
-
-                  <span id="breadcrumbs-current">Desenvolvimento Web com Frameworks Modernos</span>
-
-                </span>
-
+      <section class="sc-f97e9fc-0 degGaS">
+        <div class="sc-575bb398-0 emgExH">
+          <div offset="380px" class="sc-575bb398-1 bJljTo">
+            <h1 class="sc-956c838-0 iLowaZ">Construindo aplicações com Angular e Java Spring Boot</h1>
+            <div class="sc-956c838-2 boGIkj">
+              <div class="sc-956c838-1 jibROA"><svg width="24" height="24" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7 16C7 15.8022 7.05865 15.6089 7.16853 15.4444C7.27841 15.28 7.43459 15.1518 7.61732 15.0761C7.80004 15.0004 8.00111 14.9806 8.19509 15.0192C8.38907 15.0578 8.56725 15.153 8.70711 15.2929C8.84696 15.4327 8.9422 15.6109 8.98079 15.8049C9.01937 15.9989 8.99957 16.2 8.92388 16.3827C8.84819 16.5654 8.72002 16.7216 8.55557 16.8315C8.39112 16.9414 8.19778 17 8 17C7.73478 17 7.48043 16.8946 7.29289 16.7071C7.10536 16.5196 7 16.2652 7 16ZM12 15H16C16.2652 15 16.5196 15.1054 16.7071 15.2929C16.8946 15.4804 17 15.7348 17 16C17 16.2652 16.8946 16.5196 16.7071 16.7071C16.5196 16.8946 16.2652 17 16 17H12C11.7348 17 11.4804 16.8946 11.2929 16.7071C11.1054 16.5196 11 16.2652 11 16C11 15.7348 11.1054 15.4804 11.2929 15.2929C11.4804 15.1054 11.7348 15 12 15ZM18 20H6C5.73478 20 5.48043 19.8946 5.29289 19.7071C5.10536 19.5196 5 19.2652 5 19V13H19V19C19 19.2652 18.8946 19.5196 18.7071 19.7071C18.5196 19.8946 18.2652 20 18 20ZM6 6H7V7C7 7.26522 7.10536 7.51957 7.29289 7.70711C7.48043 7.89464 7.73478 8 8 8C8.26522 8 8.51957 7.89464 8.70711 7.70711C8.89464 7.51957 9 7.26522 9 7V6H15V7C15 7.26522 15.1054 7.51957 15.2929 7.70711C15.4804 7.89464 15.7348 8 16 8C16.2652 8 16.5196 7.89464 16.7071 7.70711C16.8946 7.51957 17 7.26522 17 7V6H18C18.2652 6 18.5196 6.10536 18.7071 6.29289C18.8946 6.48043 19 6.73478 19 7V11H5V7C5 6.73478 5.10536 6.48043 5.29289 6.29289C5.48043 6.10536 5.73478 6 6 6ZM18 4H17V3C17 2.73478 16.8946 2.48043 16.7071 2.29289C16.5196 2.10536 16.2652 2 16 2C15.7348 2 15.4804 2.10536 15.2929 2.29289C15.1054 2.48043 15 2.73478 15 3V4H9V3C9 2.73478 8.89464 2.48043 8.70711 2.29289C8.51957 2.10536 8.26522 2 8 2C7.73478 2 7.48043 2.10536 7.29289 2.29289C7.10536 2.48043 7 2.73478 7 3V4H6C5.20435 4 4.44129 4.31607 3.87868 4.87868C3.31607 5.44129 3 6.20435 3 7L3 19C3 19.7956 3.31607 20.5587 3.87868 21.1213C4.44129 21.6839 5.20435 22 6 22H18C18.7956 22 19.5587 21.6839 20.1213 21.1213C20.6839 20.5587 21 19.7956 21 19V7C21 6.20435 20.6839 5.44129 20.1213 4.87868C19.5587 4.31607 18.7956 4 18 4Z">
+                  </path>
+                </svg>
+                <p>26 jun - 2023 • 19:00 &gt; 26 jun - 2023 • 21:00</p>
               </div>
             </div>
-
-            <div id="navigation">
-              <a name="anavigation" id="anavigation" class="anchor">menu</a>
-              <span class="menuTrigger">Menu</span>
-              <div id="portal-column-one" class="cell width-1:4 position-0">
-
-
-                <div class="portletWrapper"
-                  id="portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f506c6f6e650a72656c6576616e636961"
-                  data-portlethash="706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f506c6f6e650a72656c6576616e636961">
-                  <dl class="portlet portletNavigationTree">
-
-                    <dt class="portletHeader">
-                      <span class="portletTopLeft"></span>
-                      Usuários
-                      <span class="portletTopRight"></span>
-                    </dt>
-
-                    <dd class="portletItem lastItem">
-                      <ul class="navTree navTreeLevel0">
-
-                        <li class="navTreeItem visualNoMarker section-alunos">
-
-                          <a href="#" title="" class="state-published">
-                            <span>Alunos</span>
-                          </a>
-
-                        </li>
-
-                        <li class="navTreeItem visualNoMarker section-comunidade">
-
-                          <a href="#" title="" class="state-published">
-                            <span>Comunidade</span>
-                          </a>
-
-                        </li>
-
-                        <li class="navTreeItem visualNoMarker section-egressos">
-
-                          <a href="#" title="" class="state-published">
-                            <span>Egressos</span>
-                          </a>
-
-                        </li>
-
-                        <li class="navTreeItem visualNoMarker section-futuros-alunos">
-
-                          <a href="#" title="" class="state-published">
-                            <span>Futuros alunos</span>
-                          </a>
-
-                        </li>
-
-                        <li class="navTreeItem visualNoMarker section-servidores">
-
-                          <a href="#" title="" class="state-published">
-                            <span>Colaboradores</span>
-                          </a>
-
-                        </li>
-                      </ul>
-                      <span class="portletBottomLeft"></span>
-                      <span class="portletBottomRight"></span>
-                    </dd>
-                  </dl>
-
-                </div>
-
-                <div class="portletWrapper"
-                  id="portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f506c6f6e650a616c756e6f73"
-                  data-portlethash="706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f506c6f6e650a616c756e6f73">
-                  <dl class="portlet portletNavigationTree">
-
-                    <dt class="portletHeader">
-                      <span class="portletTopLeft"></span>
-                      Institucional
-                      <span class="portletTopRight"></span>
-                    </dt>
-
-                    <dd class="portletItem lastItem">
-                      <ul class="navTree navTreeLevel0">
-                        <li class="navTreeItem visualNoMarker section-sobre-a-utfpr">
-                          <a href="#" title="" class="state-published">
-                            <span>Sobre a Uniasselvi</span>
-                          </a>
-
-                        </li>
-
-                        <li class="navTreeItem visualNoMarker section-estrutura">
-
-                          <a href="#" title="" class="state-published">
-                            <span>Estrutura</span>
-                          </a>
-
-                        </li>
-
-                        <li class="navTreeItem visualNoMarker section-documentos">
-
-                          <a href="#" title="" class="state-published">
-                            <span>Documentos</span>
-                          </a>
-
-                        </li>
-
-                        <li class="navTreeItem visualNoMarker section-editais">
-
-                          <a href="#" title="" class="state-published">
-                            <span>Editais</span>
-                          </a>
-
-                        </li>
-
-                        <li class="navTreeItem visualNoMarker section-comissoes">
-
-                          <a href="#" title="" class="state-published">
-                            <span>Comissões</span>
-                          </a>
-                        </li>
-
-                        <li class="navTreeItem visualNoMarker section-avaliacao-institucional">
-
-                          <a href="#" title="" class="state-published">
-                            <span>Avaliação Institucional</span>
-                          </a>
-
-                        </li>
-
-                        <li class="navTreeItem visualNoMarker section-titulos-honorificos">
-
-                          <a href="#" title="" class="state-published">
-                            <span>Títulos</span>
-                          </a>
-
-                        </li>
-
-                      </ul>
-                      <span class="portletBottomLeft"></span>
-                      <span class="portletBottomRight"></span>
-                    </dd>
-                  </dl>
-
-                </div>
-
-                <div class="portletWrapper"
-                  id="portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f506c6f6e650a63616d707573"
-                  data-portlethash="706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f506c6f6e650a63616d707573">
-                  <dl class="portlet portletNavigationTree">
-
-                    <dt class="portletHeader">
-                      <span class="portletTopLeft"></span>
-                      Campus
-                      <span class="portletTopRight"></span>
-                    </dt>
-
-                    <dd class="portletItem lastItem">
-                      <ul class="navTree navTreeLevel0">
-                        <li class="navTreeItem visualNoMarker navTreeFolderish section-apucarana">
-
-                          <a href="#" title="" class="state-published navTreeFolderish">
-                            <span>Indaial</span>
-                          </a>
-
-                        </li>
-
-                        <li class="navTreeItem visualNoMarker navTreeFolderish section-campomourao">
-
-                          <a href="#" title="" class="state-published navTreeFolderish">
-                            <span>Polos</span>
-                          </a>
-
-                        </li>
-
-                      </ul>
-                      <span class="portletBottomLeft"></span>
-                      <span class="portletBottomRight"></span>
-                    </dd>
-                  </dl>
-
-                </div>
-
-              </div>
-
+            <div class="sc-956c838-2 sc-956c838-3 lfnkfS">
+              <div class="sc-956c838-1 jibROA"><svg width="16" height="16" viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8.01871 1.33434C11.686 1.34501 14.6667 4.33034 14.6667 7.99967C14.6667 11.669 11.686 14.655 8.01871 14.665C8.01871 14.665 8.01537 14.6663 8.01337 14.6663L8.01004 14.6657C8.01004 14.6657 8.00751 14.6658 8.00604 14.666C8.00424 14.6661 8.00224 14.6663 8.00004 14.6663C4.32404 14.6663 1.33337 11.6757 1.33337 7.99967C1.33337 4.32434 4.32404 1.33301 8.00004 1.33301C8.0018 1.33301 8.00375 1.33319 8.00558 1.33337C8.00723 1.33353 8.01004 1.33367 8.01004 1.33367C8.0118 1.33367 8.01337 1.33386 8.01486 1.33404C8.01619 1.33419 8.01871 1.33434 8.01871 1.33434ZM6.05271 7.33301C6.25671 5.15167 7.37271 3.63301 8.01737 2.93101C8.68404 3.64501 9.78271 5.14967 9.97271 7.33301H6.05271ZM4.71004 7.33301C4.85671 5.42434 5.59071 3.95101 6.29204 2.95234C4.39071 3.59767 2.97004 5.28501 2.71271 7.33301H4.71004ZM2.71271 8.66634H4.70737C4.84471 10.5743 5.56271 12.037 6.27137 13.0403C4.38004 12.389 2.96937 10.707 2.71271 8.66634ZM9.74471 13.0343C10.444 12.0357 11.1714 10.567 11.3167 8.66634H13.2867C13.0314 10.701 11.6274 12.3797 9.74471 13.0343ZM9.97471 8.66634H6.05337C6.23937 10.8477 7.31004 12.3317 8.00804 13.0717C8.65204 12.3697 9.77071 10.851 9.97471 8.66634ZM13.2867 7.33301H11.3187C11.182 5.43367 10.472 3.97567 9.76671 2.97367C11.6387 3.63367 13.0327 5.30634 13.2867 7.33301Z">
+                  </path>
+                </svg><span>Evento Online via <strong>Teams</strong></span></div>
             </div>
+          </div><template data-dgst="DYNAMIC_SERVER_USAGE"></template>
+        </div>
+      </section>
+      <section class="sc-f97e9fc-0 bbbkGo">
+        <div class="sc-575bb398-0 emgExH">
+          <div offset="380px" class="sc-575bb398-1 bJljTo">
+            <h3 class="sc-62dfc0da-0 eGwEpB">Descrição do evento</h3>
+            <div class="sc-e3efa2c6-0 auDss">
+              <div class="sc-15di2n3-0 byYAvu ql-snow">
+                <div class="sc-15di2n3-1 gqhSlq">
+                  <div class="EventDescriptionstyle__Description-sc-1v81jpg-0 iOzvjs">
+                    <div class="sc-15di2n3-0 byYAvu ql-snow">
+                      <div class="sc-15di2n3-1 gqhSlq">
+                        <div class="EventDescriptionstyle__Description-sc-1v81jpg-0 iOzvjs">
+                          <p
+                            style="margin-bottom:10px;line-height:21px;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important">
+                            <b>
+                              <font color="#085294"><span style="font-size:24px">SOBRE O
+                                  EVENTO:</span></font>
+                            </b>
+                          </p>
+                          <p
+                            style="margin-bottom: 10px; line-height: 21px; background-image: none !important; background-position: initial !important; background-size: initial !important; background-repeat: initial !important; background-attachment: initial !important; background-origin: initial !important; background-clip: initial !important;">
 
-            <!-- Conteudo -->
-            <div id="portal-column-content" class="cell width-3:4 position-1:4">
-              <a name="acontent" id="acontent" class="anchor">conteúdo</a>
+                            <span style="font-size: 18px;">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at blandit velit. Donec
+                              laoreet auctor sem vel interdum. Cras blandit elit velit. Curabitur sed lectus non ex
+                              blandit viverra eu et diam. Cras est est, rutrum quis massa non, lobortis scelerisque
+                              nisl. Morbi diam urna, vulputate id iaculis non, luctus at velit. Maecenas dolor orci,
+                              efficitur eu ante quis, iaculis elementum magna. Mauris maximus, diam sed dapibus
+                              volutpat, turpis dui tristique sem, at sodales metus magna at mi. Mauris vel placerat
+                              felis, at sollicitudin dolor.
+                            </span>
 
-              <div class="">
-
-                <dl class="portalMessage info" id="kssPortalMessage" style="display:none">
-                  <dt>Info</dt>
-                  <dd></dd>
-                </dl>
-
-
-                <div id="content">
-
-                  <div id="viewlet-above-content-title"></div>
-
-                  <h1 class="documentFirstHeading">Desenvolvimento Web com Frameworks Modernos</h1>
-
-
-                  <div id="viewlet-below-content-title">
-                    <div id="viewlet-social-like" style="display:none" class="horizontal">
-
-                      <div class="sociallike-network-facebook">
-                        <!-- Facebook -->
-                        <div class="fb-like" data-send="false" data-show-faces="false"
-                          data-href="http://www.utfpr.edu.br/cursos/especializacao/ct/desenvolvimento-web-com-frameworks-modernos"
-                          data-action="like" data-layout="button_count" data-share="False">
+                          </p>
+                          <p
+                            style="margin-bottom: 10px; line-height: 21px; background-image: none !important; background-position: initial !important; background-size: initial !important; background-repeat: initial !important; background-attachment: initial !important; background-origin: initial !important; background-clip: initial !important;">
+                            <span style="font-size: 18px;">Pellentesque auctor vel urna vel tincidunt. In at porttitor
+                              enim. Phasellus imperdiet scelerisque urna, id auctor sem aliquet ac. Class aptent taciti
+                              sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam elementum
+                              augue lobortis, laoreet sem condimentum, semper erat. Nullam tristique, dui vitae
+                              venenatis condimentum, orci lectus vulputate neque, at congue sapien neque id magna.
+                              Mauris eget purus eu tortor sodales consectetur. Suspendisse vitae nibh at justo tristique
+                              feugiat at quis metus. Donec nec dui dictum, sollicitudin ligula in, fermentum velit.
+                              Nullam ac fringilla massa. Integer euismod tortor vel risus porta pretium.</span>
+                          </p>
+                          <div><br></div>
+                          <p
+                            style="margin-bottom:10px;line-height:21px;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important">
+                            <span
+                              style="background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important"><span
+                                style="font-size:24px;background-color:white;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important"><b>
+                                  <font color="#085294"><br>AGENDA:</font>
+                                </b></span></span>
+                          </p>
+                          <p
+                            style="margin-bottom:10px;line-height:21px;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important">
+                            <b style="font-size: 18px; letter-spacing: 0px;">Construindo
+                              aplicações</b><span style="font-size: 18px; letter-spacing: 0px;"> com </span><b
+                              style="font-size: 18px; letter-spacing: 0px;">Angular e Java
+                              Spring
+                              Boot</b>
+                          </p>
+                          <p
+                            style="margin-bottom:10px;line-height:21px;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important">
+                            <span style="background-color:white"><span
+                                style="background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important"><br></span><span
+                                style="background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important;font-size:18px">→&nbsp;</span></span><span
+                              style="letter-spacing: 0px;"><span
+                                style="background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important;font-size:18px">DATA</span><span
+                                style="font-size:18px">:<b> 26&nbsp;de
+                                  junho&nbsp;</b></span></span><b style="letter-spacing: 0px;"><span
+                                style="font-size:18px">de
+                                2023</span></b><span style="letter-spacing: 0px; font-size: 18px;">, às
+                            </span><span style="letter-spacing: 0px; font-size: 18px;"><b>19h</b></span><span
+                              style="letter-spacing: 0px; font-size: 18px;"> (horário de
+                              Brasília)</span>
+                          </p>
+                          <p
+                            style="margin-bottom:10px;line-height:21px;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important">
+                            <span style="background-color:white"><span style="font-size: 18px;">→ Com <b>acadêmicos
+                                  do curso de Análise e Desenvolvimento de Sistemas.</b></span></span>
+                          </p>
+                          <p
+                            style="margin-bottom:10px;line-height:21px;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important">
+                            <br>
+                          </p>
+                          <p
+                            style="margin-bottom:10px;line-height:21px;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important">
+                            <img
+                              style="max-width:100%;width:341.656px;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important"
+                              class="fade-in"
+                              src="https://karajasshopping.com.br/wp-content/uploads/2022/02/uniasselvi.png"><span
+                              style="background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important"><br
+                                style="background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important"></span>
+                          </p>
+                          <p><span
+                              style="background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important"><span
+                                style="font-size:24px;background-color:white;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important">
+                                <font color="#085294"><b>SOBRE A UNIASSELVI: <br></b></font>
+                              </span></span></p>
+                          <p
+                            style="margin-bottom:10px;line-height:21px;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important">
+                            <span style="font-size:18px">A UNIASSELVI é a maior instituição de ensino superior de Santa
+                              Catarina e uma das maiores do Brasil, ofertando mais de 300 cursos de Graduação,
+                              Pós-graduação, Profissionalizantes e Técnicos nas modalidades presencial e a distância.
+                              São mais de mil polos de ensino a distância em todos os estados e 10 unidades próprias de
+                              ensino presencial em Santa Catarina (SC) e no Mato Grosso (MT).</span>
+                          </p>
+                          <p
+                            style="margin-bottom:10px;line-height:21px;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important">
+                          </p>
+                          <p
+                            style="margin-bottom:10px;line-height:21px;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important">
+                          </p>
+                          <p
+                            style="margin-bottom:10px;line-height:21px;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important">
+                            <span style="font-size:18px">Ao longo de sua história, a UNIASSELVI cresceu e se expandiu,
+                              acompanhando o crescimento
+                              das regiões onde atua. Grande parte desse crescimento aconteceu graças à atuação em
+                              pequenas e médias cidades, desde o início da operação do EAD, em 2005, sendo a primeira
+                              instituição a implantar unidades educacionais e oportunizar o acesso ao ensino superior
+                              para moradores de cidades do interior.</span>
+                          </p>
+                          <p><span
+                              style="background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important"><span
+                                style="background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important"><span
+                                  style="font-size:24px;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important"><b>
+                                    <font color="#085294">Política de uso de Dados</font>
+                                  </b></span></span></span></p>
+                          <p
+                            style="margin-bottom:10px;line-height:21px;background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important">
+                            <span
+                              style="background-image:none !important;background-position:initial !important;background-size:initial !important;background-repeat:initial !important;background-attachment:initial !important;background-origin:initial !important;background-clip:initial !important"><span
+                                style="font-size:18px">Sabemos que proteção e sigilo de
+                                dados é um tema importante. Leia
+                                sobre a nossa
+                                política quanto às informações que você nos fornece<span
+                                  style="font-size:18px">&nbsp;</span></span></span><a
+                              href="https://ajuda.rdstation.com/s/article/Conhe%C3%A7a-a-Lei-Geral-de-Prote%C3%A7%C3%A3o-de-Dados?language=pt_BR#rdstation"
+                              target="_blank" rel="nofollow noopener noreferrer"><span style="font-size:18px">neste
+                                documento.</span></a>
+                          </p>
                         </div>
-
-
                       </div>
-
-                      <div class="sociallike-network-twitter">
-                        <!-- Twitter -->
-                        <a class="twitter-share-button" href="https://twitter.com/intent/tweet"
-                          data-text="Desenvolvimento Web com Frameworks Modernos"
-                          data-url="http://www.utfpr.edu.br/cursos/especializacao/ct/desenvolvimento-web-com-frameworks-modernos"
-                          data-via="utfpr_">Tweet</a>
-                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-                      </div>
-
-                      <div class="sociallike-network-whatsapp">
-
-                        <a title="Compartilhar no WhatsApp"
-                          href="whatsapp://send?text=Desenvolvimento%20Web%20com%20Frameworks%20Modernos%20-%20http%3A//www.utfpr.edu.br/cursos/especializacao/ct/desenvolvimento-web-com-frameworks-modernos"
-                          class="whatsapp">Compartilhar</a>
-
-
-                      </div>
-
-                      <div class="sociallike-network-linkedin">
-                        <!-- Linkedin -->
-                        <script async src="//platform.linkedin.com/in.js"></script>
-                        <script type="IN/Share" data-counter="right"
-                          data-url="http://www.utfpr.edu.br/cursos/especializacao/ct/desenvolvimento-web-com-frameworks-modernos"></script>
-
-                      </div>
-
-                    </div>
-
-                    <div class="documentByLine" id="plone-document-byline">
-
-                      <span class="documentPublished">
-                        <span>publicado</span>
-                        21/04/2023 15h00,
-                      </span>
-
-                      <span class="documentModified">
-                        <span>última modificação</span>
-                        05/06/2023 19h35
-                      </span>
-
-
                     </div>
                   </div>
-
-                  <div id="viewlet-above-content-body">
-                  </div>
-                  <div id="content-core">
-
-                    <div id="parent-fieldname-text">
-                      <p align="justify"><strong>Descrição</strong><br>Nos dias de hoje, o desenvolvimento web não
-                        se faz mais de forma artesanal, mas sim lança mão de poderosa base
-                        provinda através de frameworks que são verdadeiras caixas de ferramentas
-                        para aumentar a produtividade dos desenvolvedores com consequentes
-                        ganhos para as empresas e cliente finais. Desta forma, a especialização
-                        que está sendo proposta busca prover subsídios para que os alunos possam
-                        aprender a utilizar esses frameworks projetar construir aplicações web e
-                        móveis com a máxima eficiência.</p>
-                      <p align="justify"><strong>Público Alvo</strong><br>O curso se destina, preferencialmente, a
-                        portadores de diploma de cursos reconhecidos pelo MEC, nas áreas de
-                        Desenvolvimento de Sistemas, Processamento de Dados, Engenharia e áreas
-                        afins, que desejam atualizar-se e aumentar seus conhecimentos,
-                        possibilitando seu ingresso no setor de desenvolvimento Web utilizando
-                        frameworks modernos.</p>
-                      <p><strong>Área</strong><br>Linguagens de Programação</p>
-                      <p><strong>Carga Horária</strong><br>360 horas</p>
-                      <p><strong>Duração</strong><br>22 meses</p>
-                      <p><strong>Periodicidade de Oferta</strong><br>Anual</p>
-                      <p><strong>Modalidade</strong><br>Presencial com aula a cada 15 dias</p>
-                      <p><strong><a title="" href="#" class="internal-link" target="_self">Informações
-                            Adicionais</a></strong></p>
-                    </div>
-
-
-                  </div>
-
                 </div>
-
               </div>
-
-              <div id="viewlet-below-content">
-                <div id="category" class="documentByLine">
-                  registrado em:
-                  <span>
-                    <a href="https://portal.uniasselvi.com.br/posgraduacao" class="link-category"
-                      rel="nofollow">Uniasselvi</a>
-                  </span>
-                </div>
-
-              </div>
-
             </div>
+            <div class="sc-575bb398-2 fPASTb"></div>
 
           </div>
+        </div>
+      </section>
+      <section class="sc-f97e9fc-0 degGaS">
+        <div class="sc-575bb398-0 emgExH">
+          <div id="howAccess" class="sc-811ff959-0 gPspyD">
+            <h3 class="sc-62dfc0da-0 eGwEpB">Como acessar o evento</h3>
+            <div class="sc-811ff959-3 iIbVHs">
+              <div class="sc-811ff959-4 jxErMW"><svg width="22" height="20" viewBox="0 0 22 20"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M21 9C21.2652 9 21.5196 8.89464 21.7071 8.70711C21.8946 8.51957 22 8.26522 22 8V4.67C22.0093 4.32771 21.9509 3.98695 21.8281 3.6673C21.7054 3.34764 21.5207 3.05537 21.2847 2.80728C21.0487 2.55919 20.766 2.36017 20.4529 2.22163C20.1397 2.08309 19.8023 2.00778 19.46 2L2.53998 2C2.19766 2.00778 1.86024 2.08309 1.5471 2.22163C1.23396 2.36017 0.951268 2.55919 0.715258 2.80728C0.479249 3.05537 0.294568 3.34764 0.171821 3.6673C0.0490736 3.98695 -0.00932306 4.32771 -1.58838e-05 4.67V8C-1.58838e-05 8.26522 0.105341 8.51957 0.292877 8.70711C0.480414 8.89464 0.734768 9 0.999984 9C1.37244 9.02566 1.71951 9.19798 1.96509 9.47918C2.21066 9.76037 2.3347 10.1275 2.30998 10.5C2.3347 10.8725 2.21066 11.2396 1.96509 11.5208C1.71951 11.802 1.37244 11.9743 0.999984 12C0.734768 12 0.480414 12.1054 0.292877 12.2929C0.105341 12.4804 -1.58838e-05 12.7348 -1.58838e-05 13V16.33C-0.00932306 16.6723 0.0490736 17.013 0.171821 17.3327C0.294568 17.6524 0.479249 17.9446 0.715258 18.1927C0.951268 18.4408 1.23396 18.6398 1.5471 18.7784C1.86024 18.9169 2.19766 18.9922 2.53998 19H19.46C19.8023 18.9922 20.1397 18.9169 20.4529 18.7784C20.766 18.6398 21.0487 18.4408 21.2847 18.1927C21.5207 17.9446 21.7054 17.6524 21.8281 17.3327C21.9509 17.013 22.0093 16.6723 22 16.33V13C22 12.7348 21.8946 12.4804 21.7071 12.2929C21.5196 12.1054 21.2652 12 21 12C20.6275 11.9743 20.2805 11.802 20.0349 11.5208C19.7893 11.2396 19.6653 10.8725 19.69 10.5C19.6653 10.1275 19.7893 9.76037 20.0349 9.47918C20.2805 9.19798 20.6275 9.02566 21 9ZM20 7.16C19.3213 7.41617 18.7368 7.87301 18.3242 8.46969C17.9117 9.06638 17.6907 9.77458 17.6907 10.5C17.6907 11.2254 17.9117 11.9336 18.3242 12.5303C18.7368 13.127 19.3213 13.5838 20 13.84V16.33C20.0168 16.4904 19.9695 16.6509 19.8683 16.7764C19.7671 16.902 19.6203 16.9824 19.46 17H2.53998C2.37969 16.9824 2.2329 16.902 2.13171 16.7764C2.03052 16.6509 1.98316 16.4904 1.99998 16.33V13.84C2.67867 13.5838 3.26321 13.127 3.67576 12.5303C4.08832 11.9336 4.30931 11.2254 4.30931 10.5C4.30931 9.77458 4.08832 9.06638 3.67576 8.46969C3.26321 7.87301 2.67867 7.41617 1.99998 7.16V4.67C1.98316 4.50962 2.03052 4.34911 2.13171 4.22356C2.2329 4.098 2.37969 4.01762 2.53998 4H12V14C12 14.2652 12.1053 14.5196 12.2929 14.7071C12.4804 14.8946 12.7348 15 13 15C13.2652 15 13.5196 14.8946 13.7071 14.7071C13.8946 14.5196 14 14.2652 14 14V4H19.46C19.6203 4.01762 19.7671 4.098 19.8683 4.22356C19.9695 4.34911 20.0168 4.50962 20 4.67V7.16Z">
+                  </path>
+                </svg>
+                <div>
+                  <p>Acesse o calendário do <strong>Teams</strong> via site ou no app Teams disponível para
+                    <a href="https://apps.apple.com/br/app/microsoft-teams/id1113153706" target="_blank"
+                      rel="noopener noreferrer"> iOS </a> e <a
+                      href="https://play.google.com/store/search?q=teams&c=apps" target="_blank"
+                      rel="noopener noreferrer">Android</a>
+                  </p>
+                </div>
+              </div>
+              <div class="sc-811ff959-4 jxErMW"><svg width="24" height="24" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 11C19.7348 11 19.4804 11.1054 19.2929 11.2929C19.1054 11.4804 19 11.7348 19 12V18C19 18.2652 18.8946 18.5196 18.7071 18.7071C18.5196 18.8947 18.2652 19 18 19H6C5.73478 19 5.48043 18.8947 5.29289 18.7071C5.10536 18.5196 5 18.2652 5 18V6.00002C5 5.7348 5.10536 5.48045 5.29289 5.29291C5.48043 5.10537 5.73478 5.00002 6 5.00002H12C12.1316 5.00078 12.2621 4.97555 12.3839 4.92579C12.5057 4.87602 12.6166 4.8027 12.71 4.71002C12.8027 4.61658 12.876 4.50576 12.9258 4.38392C12.9755 4.26209 13.0008 4.13162 13 4.00002C13.0008 3.86841 12.9755 3.73795 12.9258 3.61611C12.876 3.49427 12.8027 3.38346 12.71 3.29002C12.6166 3.19734 12.5057 3.12401 12.3839 3.07425C12.2621 3.02448 12.1316 2.99926 12 3.00002H6C5.20435 3.00002 4.44129 3.31609 3.87868 3.8787C3.31607 4.44131 3 5.20437 3 6.00002L3 18C3 18.7957 3.31607 19.5587 3.87868 20.1213C4.44129 20.6839 5.20435 21 6 21H18C18.7956 21 19.5587 20.6839 20.1213 20.1213C20.6839 19.5587 21 18.7957 21 18V12C21 11.7348 20.8946 11.4804 20.7071 11.2929C20.5196 11.1054 20.2652 11 20 11ZM16 5.00002H17.58L11.29 11.28C11.1954 11.3742 11.1206 11.4864 11.07 11.61C11.0171 11.7297 10.9898 11.8591 10.9898 11.99C10.9898 12.1209 11.0171 12.2503 11.07 12.37C11.1203 12.4938 11.1949 12.6062 11.2893 12.7007C11.3838 12.7951 11.4962 12.8697 11.62 12.92C11.7397 12.9729 11.8691 13.0002 12 13.0002C12.1309 13.0002 12.2603 12.9729 12.38 12.92C12.5036 12.8695 12.6158 12.7946 12.71 12.7L19 6.42002V8.00002C19 8.26523 19.1054 8.51959 19.2929 8.70712C19.4804 8.89466 19.7348 9.00002 20 9.00002C20.2652 9.00002 20.5196 8.89466 20.7071 8.70712C20.8946 8.51959 21 8.26523 21 8.00002V4.00002C21.0008 3.86841 20.9755 3.73795 20.9258 3.61611C20.876 3.49427 20.8027 3.38346 20.71 3.29002C20.6166 3.19734 20.5057 3.12401 20.3839 3.07425C20.2621 3.02448 20.1316 2.99926 20 3.00002H16C15.8684 2.99926 15.7379 3.02448 15.6161 3.07425C15.4943 3.12401 15.3834 3.19734 15.29 3.29002C15.1973 3.38346 15.124 3.49427 15.0742 3.61611C15.0245 3.73795 14.9992 3.86841 15 4.00002C14.9992 4.13162 15.0245 4.26209 15.0742 4.38392C15.124 4.50576 15.1973 4.61658 15.29 4.71002C15.3834 4.8027 15.4943 4.87602 15.6161 4.92579C15.7379 4.97555 15.8684 5.00078 16 5.00002Z">
+                  </path>
+                </svg>
+                <div>
+                  <p>Clique na data do evento relacionado a turma <strong>FLC8740ADS</strong></p>
+                </div>
+              </div>
+              <div class="sc-811ff959-4 jxErMW"><svg width="24" height="24" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M19 18H5C4.449 18 4 17.552 4 17V7.25L11.4 12.8C11.578 12.934 11.789 13 12 13C12.211 13 12.422 12.934 12.6 12.8L20 7.25V17C20 17.552 19.551 18 19 18ZM18.333 6L12 10.75L5.667 6H18.333ZM19 4H5C3.346 4 2 5.346 2 7V17C2 18.654 3.346 20 5 20H19C20.654 20 22 18.654 22 17V7C22 5.346 20.654 4 19 4Z">
+                  </path>
+                </svg>
+                <div>
+                  <p><strong>Pronto!</strong> Você entrou no Seminário de Análise e Desenvolvimento de Sistemas!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <footer class="footer">
+        <div class="container bottom">
+          <div class="row group">
+            <div class="col-xs-12 col-sm-3 col-lg-2 item">
+              <h4 class="h3">
+                Institucional
+                <a href="#!" data-toggle="collapse" data-target="#fn-1" class="visible-xs collapsed">
+                  <i class="material-icons">&#xE145;</i>
+                </a>
+              </h4>
+              <div class="navbar-collapse collapse" id="fn-1">
+                <ul class="list-unstyled">
+                  <li><a href="https://portal.uniasselvi.com.br/institucional" class="eventClick"
+                      data-layer-category="Institucional" data-layer-action="Conheca a UNIASSELVI"
+                      data-layer-label="">Conheça a UNIASSELVI</a></li>
+                  <li><a href="https://portal.uniasselvi.com.br/institucional/locais" class="eventClick"
+                      data-layer-category="Institucional" data-layer-action="Unidades e polos"
+                      data-layer-label="">Unidades e polos</a></li>
+                  <li><a href="https://portal.uniasselvi.com.br/institucional/canal-etica" class="eventClick"
+                      data-layer-category="Institucional" data-layer-action="Canal de Etica" data-layer-label="">Canal
+                      de Ética</a></li>
+                  <li><a href="https://portal.uniasselvi.com.br/institucional/ouvidoria" class="eventClick"
+                      data-layer-category="Institucional" data-layer-action="Ouvidoria"
+                      data-layer-label="">Ouvidoria</a></li>
+                  <li><a href="https://portal.uniasselvi.com.br/noticias" class="eventClick"
+                      data-layer-category="Institucional" data-layer-action="Noticias" data-layer-label="">Notícias</a>
+                  </li>
+                  <li><a href="https://portal.uniasselvi.com.br/institucional/politica-privacidade" class="eventClick"
+                      data-layer-category="Institucional" data-layer-action="Política de Privacidade"
+                      data-layer-label="">Política de Privacidade</a></li>
+                  <li><a href="https://portal.uniasselvi.com.br/press-releases" class="eventClick"
+                      data-layer-category="Institucional" data-layer-action="Press releases" data-layer-label="">Press
+                      releases</a></li>
+                  <li><a href="https://portal.uniasselvi.com.br/institucional/publicacoes-legais" class="eventClick"
+                      data-layer-category="Institucional" data-layer-action="Publicacoes legais"
+                      data-layer-label="">Publicações legais</a></li>
+                  <li><a href="https://portal.uniasselvi.com.br/institucional/regulamentos" class="eventClick"
+                      data-layer-category="Institucional" data-layer-action="Regulamentos"
+                      data-layer-label="">Regulamentos</a></li>
+                  <li><a href="https://uniasselvi.gupy.io/" class="eventClick" data-layer-category="Institucional"
+                      data-layer-action="Trabalhe conosco" data-layer-label="">Trabalhe conosco</a></li>
+                  <li><a href="https://portal.uniasselvi.com.br/parceiros" class="eventClick"
+                      data-layer-category="Institucional" data-layer-action="Seja nosso parceiro"
+                      data-layer-label="">Seja nosso parceiro</a></li>
+                  <li><a href="https://portal.uniasselvi.com.br/institucional/nucleos-de-atendimento" class="eventClick"
+                      data-layer-category="Institucional" data-layer-action="Nucleos de atendimento"
+                      data-layer-label="">Núcleos de atendimento</a></li>
+                  <li><a href="https://portal.uniasselvi.com.br/portal-da-extensao" class="eventClick"
+                      data-layer-category="Institucional" data-layer-action="Nucleos de atendimento"
+                      data-layer-label="">Portal da Extensão</a></li>
+                  <li><a href="https://portal.uniasselvi.com.br/editora-uniasselvi" class="eventClick"
+                      data-layer-category="Institucional" data-layer-action="Editora UNIASSELVI"
+                      data-layer-label="">Editora UNIASSELVI</a></li>
+                </ul>
+                <div class="space-after-collapse visible-xs"></div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-3 col-lg-2 item">
+              <h4 class="h3">
+                Graduação
+                <a href="#!" data-toggle="collapse" data-target="#fn-2" class="visible-xs collapsed">
+                  <i class="material-icons">&#xE145;</i>
+                </a>
+              </h4>
+              <div class="navbar-collapse collapse" id="fn-2">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="https://portal.uniasselvi.com.br/graduacao" class="eventClick"
+                      data-layer-category="Graduacao" data-layer-action="Cursos" data-layer-label="">Cursos</a>
+                  </li>
+                  <li>
+                    <a href="https://portal.uniasselvi.com.br/graduacao" class="eventClick"
+                      data-layer-category="Graduacao" data-layer-action="Inscreva-se"
+                      data-layer-label="">Inscreva-se</a>
+                  </li>
+                  <li>
+                    <a href="https://portal.uniasselvi.com.br/graduacao/alunos" class="eventClick"
+                      data-layer-category="Graduacao" data-layer-action="Servicos" data-layer-label="">Serviços</a>
+                  </li>
+                  <li>
+                    <a href="https://gioconda.uniasselvi.com.br" class="eventClick" data-layer-category="Graduacao"
+                      data-layer-action="Portal do aluno" data-layer-label="">Portal do aluno</a>
+                  </li>
+                  <li><b>Portal do candidato:</b></li>
+                  <li><a href="https://areasegura.uniasselvi.com.br" class="eventClick" data-layer-category="Graduacao"
+                      data-layer-action="EAD" data-layer-label="" target="_blank">EAD <i
+                        class="material-icons">&#xE895;</i></a></li>
+                  <li><a href="https://areasegura.uniasselvi.com.br" class="eventClick" data-layer-category="Graduacao"
+                      data-layer-action="Presencial" data-layer-label="" target="_blank">Presencial <i
+                        class="material-icons">&#xE895;</i></a></li>
+                  <li><b>Resultados:</b></li>
+                  <li><a href="https://portal.uniasselvi.com.br/inscricao/graduacao/resultado.php" class="eventClick"
+                      data-layer-category="Graduacao" data-layer-action="EAD" data-layer-label="" target="_blank">EAD <i
+                        class="material-icons">&#xE895;</i></a></li>
+                  <li><a href="https://portal.uniasselvi.com.br/inscricao/graduacao/resultado.php?m=presencial"
+                      class="eventClick" data-layer-category="Graduacao" data-layer-action="Presencial"
+                      data-layer-label="" target="_blank">Presencial <i class="material-icons">&#xE895;</i></a></li>
+                </ul>
+                <div class="space-after-collapse visible-xs"></div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-3 col-lg-2 item">
+              <h4 class="h3">
+                Pós-graduação
+                <a href="#!" data-toggle="collapse" data-target="#fn-2-2" class="visible-xs collapsed">
+                  <i class="material-icons">&#xE145;</i>
+                </a>
+              </h4>
+              <div class="navbar-collapse collapse" id="fn-2-2">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="https://portal.uniasselvi.com.br/posgraduacao" class="eventClick"
+                      data-layer-category="Pos-graduacao" data-layer-action="Cursos" data-layer-label="">Cursos</a>
+                  </li>
+                  <li>
+                    <a href="https://portal.uniasselvi.com.br/posgraduacao" class="eventClick"
+                      data-layer-category="Pos-graduacao" data-layer-action="Inscreva-se"
+                      data-layer-label="">Inscreva-se</a>
+                  </li>
+                  <li><a href="https://portal.uniasselvi.com.br/posgraduacao/alunos" class="eventClick"
+                      data-layer-category="Pos-graduacao" data-layer-action="Servicos" data-layer-label="">Serviços</a>
+                  </li>
+                  <li><b>Portal do aluno:</b></li>
+                  <li><a href="https://login.uniasselvipos.com.br/" class="eventClick"
+                      data-layer-category="Pos-graduacao" data-layer-action="EAD" data-layer-label="">EAD</a></li>
+                  <li><a href="https://login.uniasselvi.com.br/?tipo_auth=10" class="eventClick"
+                      data-layer-category="Pos-graduacao" data-layer-action="Presencial"
+                      data-layer-label="">Presencial</a></li>
+                  <li><b>Portal do candidato:</b></li>
+                  <li><a href="https://login.uniasselvipos.com.br/" class="eventClick"
+                      data-layer-category="Pos-graduacao" data-layer-action="EAD" data-layer-label=""
+                      target="_blank">EAD <i class="material-icons">&#xE895;</i></a></li>
+                  <li><a href="https://login.uniasselvi.com.br/" class="eventClick" data-layer-category="Pos-graduacao"
+                      data-layer-action="Presencial" data-layer-label="" target="_blank">Presencial <i
+                        class="material-icons">&#xE895;</i></a></li>
+                </ul>
+                <div class="space-after-collapse visible-xs"></div>
+              </div>
+
+              <h4 class="h3">
+                Egressos
+                <a href="#!" data-toggle="collapse" data-target="#fn-5" class="border-top-mobile visible-xs collapsed">
+                  <i class="material-icons">&#xE145;</i>
+                </a>
+              </h4>
+              <div class="navbar-collapse collapse" id="fn-5">
+                <ul class="list-unstyled">
+                  <li><a href="https://portal.uniasselvi.com.br/egressos" class="eventClick"
+                      data-layer-category="Egressos" data-layer-action="Portal do egresso" data-layer-label="">Portal do
+                      egresso</a></li>
+                </ul>
+              </div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-4 col-lg-3 item">
+              <h4 class="h3">
+                Profissionalizantes <br>e Técnicos
+                <input type="hidden" value="https://portal.uniasselvi.com.br" name="hdnURLSELECAO" />
+                <input type="hidden" value="https://login.uniasselvi.com.br/" name="hdnURLLOGIN" />
+                <input type="hidden" value="https://login.uniasselvipos.com.br/" name="hdnURLLOGINPOS" />
+                <a href="#!" data-toggle="collapse" data-target="#fn-4" class="visible-xs collapsed">
+                  <i class="material-icons">&#xE145;</i>
+                </a>
+              </h4>
+              <div class="navbar-collapse collapse" id="fn-4">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="https://portal.uniasselvi.com.br/cursotecnico" class="eventClick"
+                      data-layer-category="Tecnico" data-layer-action="Cursos" data-layer-label="">Cursos</a>
+                  </li>
+                  <li>
+                    <a href="https://portal.uniasselvi.com.br/cursotecnico" class="eventClick"
+                      data-layer-category="Tecnico" data-layer-action="Inscreva-se" data-layer-label="">Inscreva-se</a>
+                  </li>
+                  <li>
+                    <a href="https://gioconda.uniasselvi.com.br" class="eventClick" data-layer-category="Tecnico"
+                      data-layer-action="Portal do aluno" data-layer-label="">Portal do aluno</a>
+                  </li>
+                </ul>
+                <div class="space-after-collapse visible-xs"></div>
+              </div>
+
+              <h4 class="h3">
+                Cursos Livres
+                <a href="#!" data-toggle="collapse" data-target="#fn-6" class="border-top-mobile visible-xs collapsed">
+                  <i class="material-icons">&#xE145;</i>
+                </a>
+              </h4>
+              <div class="navbar-collapse collapse" id="fn-6">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="https://portal.uniasselvi.com.br/cursolivre" class="eventClick" data-layer-category="Livre"
+                      data-layer-action="Cursos" data-layer-label="">Cursos</a>
+                  </li>
+                  <li>
+                    <a href="https://portal.uniasselvi.com.br/cursolivre" class="eventClick" data-layer-category="Livre"
+                      data-layer-action="Inscreva-se" data-layer-label="">Inscreva-se</a>
+                  </li>
+                  <li>
+                    <a href="https://areasegura.uniasselvi.com.br" class="eventClick" data-layer-category="Livre"
+                      data-layer-action="Portal do aluno" data-layer-label="">Portal do aluno</a>
+                  </li>
+                </ul>
+                <div class="space-after-collapse visible-xs"></div>
+              </div>
+              <img src="https://portal.uniasselvi.com.br/public/img/site/e-mec.png" alt="E-mec"
+                class="img-responsive hidden-xs">
+            </div>
+
+
+            <div class="divisor visible-sm visible-md"></div>
+
+            <div class="col-xs-12 col-lg-3 item">
+              <div class="col-xs-12 col-sm-4 col-lg-12" style="padding: 0;">
+                <h4 class="h3">
+                  Contato
+                  <a href="#!" data-toggle="collapse" data-target="#fn-4-1" class="visible-xs collapsed">
+                    <i class="material-icons">&#xE145;</i>
+                  </a>
+                </h4>
+                <div class="navbar-collapse collapse" id="fn-4-1">
+                  <ul class="list-unstyled">
+                    <li style="display: inline-flex">
+                      <span style="margin-top: 3px"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                          viewBox="0 0 39 39">
+                          <path fill="#00E676"
+                            d="M10.7 32.8l.6.3c2.5 1.5 5.3 2.2 8.1 2.2 8.8 0 16-7.2 16-16 0-4.2-1.7-8.3-4.7-11.3s-7-4.7-11.3-4.7c-8.8 0-16 7.2-15.9 16.1 0 3 .9 5.9 2.4 8.4l.4.6-1.6 5.9 6-1.5z">
+                          </path>
+                          <path fill="#FFF"
+                            d="M32.4 6.4C29 2.9 24.3 1 19.5 1 9.3 1 1.1 9.3 1.2 19.4c0 3.2.9 6.3 2.4 9.1L1 38l9.7-2.5c2.7 1.5 5.7 2.2 8.7 2.2 10.1 0 18.3-8.3 18.3-18.4 0-4.9-1.9-9.5-5.3-12.9zM19.5 34.6c-2.7 0-5.4-.7-7.7-2.1l-.6-.3-5.8 1.5L6.9 28l-.4-.6c-4.4-7.1-2.3-16.5 4.9-20.9s16.5-2.3 20.9 4.9 2.3 16.5-4.9 20.9c-2.3 1.5-5.1 2.3-7.9 2.3zm8.8-11.1l-1.1-.5s-1.6-.7-2.6-1.2c-.1 0-.2-.1-.3-.1-.3 0-.5.1-.7.2 0 0-.1.1-1.5 1.7-.1.2-.3.3-.5.3h-.1c-.1 0-.3-.1-.4-.2l-.5-.2c-1.1-.5-2.1-1.1-2.9-1.9-.2-.2-.5-.4-.7-.6-.7-.7-1.4-1.5-1.9-2.4l-.1-.2c-.1-.1-.1-.2-.2-.4 0-.2 0-.4.1-.5 0 0 .4-.5.7-.8.2-.2.3-.5.5-.7.2-.3.3-.7.2-1-.1-.5-1.3-3.2-1.6-3.8-.2-.3-.4-.4-.7-.5h-1.1c-.2 0-.4.1-.6.1l-.1.1c-.2.1-.4.3-.6.4-.2.2-.3.4-.5.6-.7.9-1.1 2-1.1 3.1 0 .8.2 1.6.5 2.3l.1.3c.9 1.9 2.1 3.6 3.7 5.1l.4.4c.3.3.6.5.8.8 2.1 1.8 4.5 3.1 7.2 3.8.3.1.7.1 1 .2h1c.5 0 1.1-.2 1.5-.4.3-.2.5-.2.7-.4l.2-.2c.2-.2.4-.3.6-.5s.4-.4.5-.6c.2-.4.3-.9.4-1.4v-.7s-.1-.1-.3-.2z">
+                          </path>
+                        </svg></span>
+                      <a href="https://wa-button.omni.chat/?retailerId=x2THigtexm&amp;wabNumber=554733016100&amp;index=6&amp;message=Ol%C3%A1%2C%20gostaria%20de%20ser%20atendido(a).&amp;codeMessage=Este%20%C3%A9%20meu%20c&oacute;digo%3A"
+                        target="_blank" class="eventClick" data-layer-category="Contato"
+                        data-layer-action="Formulario de contato" data-layer-label="">Formulário de contato</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-8 col-lg-12" style="padding: 0;">
+                <span></span>
+                <h4 class="h3">
+                  Telefones
+                  <a href="#!" data-toggle="collapse" data-target="#fn-4"
+                    class="border-top-mobile visible-xs collapsed">
+                    <i class="material-icons">&#xE145;</i>
+                  </a>
+                </h4>
+                <div class="navbar-collapse collapse" id="fn-4">
+                  <ul class="list-unstyled contacts-sm">
+                    <li>
+                      <a class="footer-phone eventClick" href="tel:04733016200" data-layer-category="Telefones"
+                        data-layer-action="Pos EAD e Presencial" data-layer-label="">
+                        Pós EAD e Presencial
+                        <strong>(47) 3301 6200</strong>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="footer-phone eventClick"
+                        href="https://wa-button.omni.chat/?retailerId=x2THigtexm&wabNumber=554733016100&index=6&message=Ol%C3%A1%2C%20gostaria%20de%20ser%20atendido(a).&codeMessage=Este%20%C3%A9%20meu%20código%3A"
+                        data-layer-category="Telefones" data-layer-action="Alunos EAD WhatsApp" data-layer-label="">
+                        Alunos EAD WhatsApp
+                        <strong>(47) 3301 6100</strong>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a class="footer-phone eventClick" href="tel:08007299009" data-layer-category="Telefones"
+                        data-layer-action="Blumenau/SC" data-layer-label="">
+                        Blumenau/SC
+                        <strong>0800 729 9009</strong>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="footer-phone eventClick" href="tel:08007299009" data-layer-category="Telefones"
+                        data-layer-action="Brusque/SC" data-layer-label="">
+                        Brusque/SC
+                        <strong>0800 729 9009</strong>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="footer-phone eventClick" href="tel:08007299009" data-layer-category="Telefones"
+                        data-layer-action="Cuiaba/MT" data-layer-label="">
+                        Cuiabá/MT
+                        <strong>0800 729 9009</strong>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="footer-phone eventClick" href="tel:08007299009" data-layer-category="Telefones"
+                        data-layer-action="Guaramirim/SC" data-layer-label="">
+                        Guaramirim/SC
+                        <strong>0800 729 9009</strong>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="footer-phone eventClick" href="tel:08007299009" data-layer-category="Telefones"
+                        data-layer-action="Indaial/SC" data-layer-label="">
+                        Indaial/SC
+                        <strong>0800 729 9009</strong>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="footer-phone eventClick" href="tel:08007299009" data-layer-category="Telefones"
+                        data-layer-action="Rio do Sul/SC" data-layer-label="">
+                        Rio do Sul/SC
+                        <strong>0800 729 9009</strong>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="footer-phone eventClick" href="tel:08007299009" data-layer-category="Telefones"
+                        data-layer-action="Rondonopolis/MT" data-layer-label="">
+                        Rondonópolis/MT
+                        <strong>0800 729 9009</strong>
+                      </a>
+                    </li>
+                    <li class="last">
+                      <a class="footer-phone eventClick" href="tel:08007299009" data-layer-category="Telefones"
+                        data-layer-action="Timbo/SC" data-layer-label="">
+                        Timbó/SC
+                        <strong>0800 729 9009</strong>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!--   <div class="clear"></div> -->
-        <div id="voltar-topo">
-          <a href="#wrapper">Voltar para o topo</a>
+        <img src="https://portal.uniasselvi.com.br/public/img/site/e-mec-mobile.png" alt="E-mec"
+          class="img-responsive visible-xs">
+
+        <div class="container copyright">
+          <div class="row group">
+            <div class="col-xs-12 col-sm-6 item middle">
+              <small>UNIASSELVI &copy; Todos os direitos reservados.</small>
+            </div>
+            <div class="col-xs-12 col-sm-6 item middle text-right">
+              <small>Redes sociais:</small>
+              <a href="https://www.facebook.com/uniasselvi/" target="_blank" class="social">
+                <img src="https://portal.uniasselvi.com.br/public/img/site/social/facebook.png" alt="Facebook"
+                  class="img-responsive">
+              </a>
+              <a href="https://www.instagram.com/uniasselvioficial/" target="_blank" class="social">
+                <img src="https://portal.uniasselvi.com.br/public/img/site/social/instagram.png" alt="Instagram"
+                  class="img-responsive">
+              </a>
+              <a href="https://twitter.com/UniasselviBR" target="_blank" class="social">
+                <img src="https://portal.uniasselvi.com.br/public/img/site/social/twitter.png" alt="Twitter"
+                  class="img-responsive">
+              </a>
+              <a href="https://www.youtube.com/user/wwwuniasselvi" target="_blank" class="social">
+                <img src="https://portal.uniasselvi.com.br/public/img/site/social/youtube.png" alt="Canal no YouTube"
+                  class="img-responsive">
+              </a>
+            </div>
+          </div>
         </div>
-
-      </div>
-
-      <div id="footer" role="contentinfo">
-        <a name="afooter" id="afooter" class="anchor"></a>
-        <!-- <div class="clear"></div> -->
-        <div id="footer-brasil" class="footer-person"></div>
-      </div>
-      <div id="extra-footer">
-        <p>Desenvolvido para uso restrito ao Seminário Acadêmico do Curso de Análise e Desenvolvimento de Sistemas <a
-            href="https://portal.uniasselvi.com.br/graduacao/sc/balneario-picarras/analise-e-desenvolvimento-de-sistemas?place=balneario-picarras-sc&modality=ead">Uniasselvi</a>
-        </p>
-      </div>
-
-      <!-- <script defer src="++resource++brasil.gov.barra/barra.js" type="text/javascript"></script> -->
+      </footer>
 
     </div>
-    <script>
-      (function (i,s,o,g,r,a,m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments);
-        },i[r].l = 1 * new Date(); a = s.createElement(o),
-          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a,m);
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-      ga('create','UA-106998674-1','auto');
-      ga('send','pageview');
-
-    </script>
   </body>
 
 </html>
